@@ -89,3 +89,26 @@ html[data-sz-theme=light] .sz-btn.ghost{color:var(--sz-tx);background:rgba(124,5
 html[data-sz-theme=light] .sz-pill.g{color:#15803d}
 html[data-sz-theme=light] body.sz .library-drop{background:rgba(124,58,237,.05)!important;color:var(--sz-tx)}
 html[data-sz-theme=light] body.sz .lib-thumb-name,html[data-sz-theme=light] body.sz .library-drop-hint{color:var(--sz-tx)}
+/* ---------- 2026-10-17: GOLD primary + gold Q (Jeff). Magenta is now a tiny accent only. ---------- */
+:root{--sz-gold:#e8b923;--sz-gold-grad:linear-gradient(135deg,#f7d774 0%,#e8b923 45%,#c98a12 100%);--sz-gold-tx:#2a1a00;--sz-gold-glow:0 6px 20px rgba(232,185,35,.35);
+  --sz-grad:linear-gradient(90deg,#8b5cf6,#b78cff 55%,#e8b923)}
+html[data-sz-theme=light]{--sz-gold:#b8860b;--sz-gold-grad:linear-gradient(135deg,#f5cf5a 0%,#e0a91a 50%,#b07a0c 100%);--sz-grad:linear-gradient(90deg,#6d28d9,#8b5cf6 55%,#b8860b)}
+html[data-sz-theme=neon]{--sz-gold-grad:linear-gradient(135deg,#fff3a0 0%,#f5d020 50%,#e8b923 100%);--sz-gold-glow:0 0 22px rgba(245,208,32,.55)}
+html[data-sz-theme=calm]{--sz-gold-grad:linear-gradient(135deg,#f3dc9a 0%,#ddb44a 55%,#b98d2c 100%);--sz-gold-glow:0 4px 14px rgba(221,180,74,.25)}
+.sz-q,.sz-gold-text{background:var(--sz-gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent;font-weight:900}
+/* every primary action in every app, every theme */
+html[data-sz-theme] body.sz .sz-btn:not(.ghost),
+html[data-sz-theme] body.sz button.b:not(.s):not(.d),
+html[data-sz-theme] body.sz button.pri,
+html[data-sz-theme] body.sz .push-btn-primary,
+html[data-sz-theme] body.sz #go,html[data-sz-theme] body.sz #reset,
+html[data-sz-theme] body.sz #ask button,
+html[data-sz-theme] body.sz .sz-sheet [data-save]{background:var(--sz-gold-grad)!important;color:var(--sz-gold-tx)!important;-webkit-text-fill-color:var(--sz-gold-tx);border-color:transparent!important;box-shadow:var(--sz-gold-glow)!important}
+html[data-sz-theme] body.sz .sz-nav a.sz-brand{background:var(--sz-gold-grad);color:var(--sz-gold-tx);box-shadow:var(--sz-gold-glow)}
+html[data-sz-theme] body.sz .sz-pill.on{background:var(--sz-gold-grad);color:var(--sz-gold-tx);box-shadow:none}
+html[data-sz-theme] body.sz nav#tabs button.on,html[data-sz-theme] body.sz nav:not(.sz-nav) button.on{background:var(--sz-gold-grad)!important;color:var(--sz-gold-tx)!important;box-shadow:none!important}
+html[data-sz-theme] body.sz .sz-fab.hl{background:var(--sz-gold-grad);color:var(--sz-gold-tx)}
+html[data-sz-theme] body.sz input[type=range]{accent-color:var(--sz-gold)}
+/* magenta kept only as a hairline accent: active nav link border */
+.sz-nav a.on{border-color:#ec4899}
+html[data-sz-theme] body.sz .sz-btn.ghost{background:rgba(127,127,127,.10)!important;color:var(--sz-tx)!important;box-shadow:none!important;border:1px solid var(--sz-line)!important}
