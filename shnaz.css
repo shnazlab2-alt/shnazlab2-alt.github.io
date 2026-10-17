@@ -1,0 +1,51 @@
+/* SHNaZ Lab shared design system — one file for every app in Jeff SHNaZLab's ecosystem.
+   Concept & design direction: Jeff SHNaZLab (Jeffrey Schnaus). Matches the WMQ prototype screens:
+   near-black/navy, purple→pink glow gradients, neon-green accents, rounded dark cards,
+   big bold score numbers, pill tags, donut charts, magenta primary button, clean sans type. */
+:root{
+  --sz-bg:#07071a;--sz-bg2:#0d0d26;--sz-card:#14142e;--sz-card2:#1b1b3d;--sz-line:rgba(170,140,255,.18);
+  --sz-tx:#f2f0ff;--sz-mu:#a7a3c9;--sz-pu:#8b5cf6;--sz-pk:#ec4899;--sz-mg:#e11d74;--sz-gr:#39ff88;--sz-gr2:#22c55e;
+  --sz-cy:#38bdf8;--sz-yl:#facc15;--sz-or:#fb923c;
+  --sz-grad:linear-gradient(90deg,#8b5cf6,#d946ef 55%,#ec4899);
+  --sz-glow:0 0 24px rgba(217,70,239,.35);--sz-r:18px;
+  --sz-font:Inter,"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+}
+/* Shared ecosystem nav (injected by shnaz-nav.js) */
+.sz-nav{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:6px;overflow-x:auto;padding:8px 10px;
+  background:rgba(7,7,26,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--sz-line);
+  font:600 13px/1 var(--sz-font);scrollbar-width:none}
+.sz-nav::-webkit-scrollbar{display:none}
+.sz-nav a{flex:none;color:var(--sz-mu);text-decoration:none;padding:7px 11px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.sz-nav a.sz-brand{color:#fff;background:var(--sz-grad);box-shadow:var(--sz-glow)}
+.sz-nav a.on{color:#fff;border-color:var(--sz-pk);background:rgba(236,72,153,.14)}
+.sz-nav a:hover{color:#fff}
+/* Components */
+.sz-card{background:linear-gradient(180deg,var(--sz-card2),var(--sz-card));border:1px solid var(--sz-line);border-radius:var(--sz-r);padding:16px;margin:12px 0;color:var(--sz-tx);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.sz-card h2,.sz-card h3{margin:0 0 8px;font-family:var(--sz-font);font-weight:800;letter-spacing:-.01em}
+.sz-kicker{font:700 11px/1.2 var(--sz-font);letter-spacing:.14em;text-transform:uppercase;color:var(--sz-gr)}
+.sz-grad-text{background:var(--sz-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sz-score{font:900 56px/1 var(--sz-font);letter-spacing:-.03em;background:linear-gradient(180deg,#fff,#d8c8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sz-score small{font-size:18px;font-weight:700;-webkit-text-fill-color:var(--sz-mu)}
+.sz-delta{color:var(--sz-gr);font:700 13px var(--sz-font)}
+.sz-bar{height:8px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.sz-bar>i{display:block;height:100%;border-radius:99px;background:var(--sz-grad)}
+.sz-bar.g>i{background:linear-gradient(90deg,#22c55e,#39ff88)}
+.sz-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;font:700 12px/1.2 var(--sz-font);border:1px solid var(--sz-line);background:rgba(139,92,246,.16);color:#e9ddff;margin:3px 4px 3px 0;cursor:default}
+button.sz-pill{cursor:pointer}
+.sz-pill.on,.sz-pill[aria-pressed=true]{background:var(--sz-grad);color:#fff;border-color:transparent;box-shadow:var(--sz-glow)}
+.sz-pill.g{background:rgba(57,255,136,.12);color:var(--sz-gr);border-color:rgba(57,255,136,.35)}
+.sz-btn{display:inline-block;border:0;border-radius:14px;padding:12px 18px;font:800 15px var(--sz-font);color:#fff;background:linear-gradient(90deg,#e11d74,#ec4899);box-shadow:0 6px 22px rgba(225,29,116,.4);cursor:pointer;text-decoration:none}
+.sz-btn.ghost{background:rgba(255,255,255,.06);box-shadow:none;border:1px solid var(--sz-line)}
+.sz-donut{width:150px;height:150px;border-radius:50%;position:relative;flex:none}
+.sz-donut::after{content:"";position:absolute;inset:26px;border-radius:50%;background:var(--sz-card)}
+.sz-grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sz-mut{color:var(--sz-mu)}
+.sz-mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;word-break:break-all}
+.sz-input{width:100%;box-sizing:border-box;padding:12px;border-radius:14px;border:1px solid var(--sz-line);background:#0b0b22;color:var(--sz-tx);font:15px var(--sz-font)}
+/* Page theme: opt in with <body class="sz">. Restyles generic elements to the ecosystem look. */
+body.sz{background:radial-gradient(800px 480px at 50% -10%,rgba(139,92,246,.28),transparent 60%),radial-gradient(600px 400px at 100% 40%,rgba(236,72,153,.12),transparent 60%),var(--sz-bg) !important;
+  background-attachment:fixed;color:var(--sz-tx);font-family:var(--sz-font)}
+body.sz a{color:#d8b4fe}
+body.sz ::selection{background:rgba(236,72,153,.45)}
+/* Footer authorship stamp keeps its green originality mark, dressed in the dark card style */
+body.sz .authorship-stamp{background:linear-gradient(180deg,#0f2a1a,#0a1d13) !important;border-color:var(--sz-gr2) !important;border-radius:var(--sz-r) !important}
