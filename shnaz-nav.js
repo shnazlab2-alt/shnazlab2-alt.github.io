@@ -1,6 +1,6 @@
 /* SHNaZ Lab shared ecosystem nav. One nav, every app. Concept: Jeff SHNaZLab. */
 (function(){
-  var APPS=[["/","SHNaZ Lab","sz-brand"],["/what-matters/","What Matters"],["/q-stamp/","Q Stamp"],["/q-stamp/apps-directory.html","Apps Directory"],["/mosaic/","Mosaic"],["/mosaic/daily/","Daily Tiles"],["/emotional-filter-gate/eruption-sample/","Filter Gate"]];
+  var APPS=[["/","SHNaZ Lab","sz-brand"],["/what-matters/","What Matters"],["/what-matters/daily-pulse/","Daily Pulse"],["/q-stamp/","Q Stamp"],["/q-stamp/apps-directory.html","Apps Directory"],["/mosaic/","Mosaic"],["/mosaic/daily/","Daily Tiles"],["/emotional-filter-gate/eruption-sample/","Filter Gate"],["/what-matters/daily-pulse/#bank","Bank"],["/#w3","W³"]];
   var THEMES=[["dark","Dark"],["light","Light"],["neon","Neon"],["calm","Calm"]];
   var T="dark";try{T=localStorage.getItem("sz-theme")||"dark"}catch(e){}
   if(!THEMES.some(function(t){return t[0]===T}))T="dark";
