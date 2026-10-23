@@ -112,3 +112,7 @@ html[data-sz-theme] body.sz input[type=range]{accent-color:var(--sz-gold)}
 /* magenta kept only as a hairline accent: active nav link border */
 .sz-nav a.on{border-color:#ec4899}
 html[data-sz-theme] body.sz .sz-btn.ghost{background:rgba(127,127,127,.10)!important;color:var(--sz-tx)!important;box-shadow:none!important;border:1px solid var(--sz-line)!important}
+/* Light-mode nav readability (2026-10-23, add-only) */
+html[data-sz-theme=light] .sz-nav a{color:#3b3355}
+html[data-sz-theme=light] .sz-nav a:hover{color:#1b1530;background:rgba(124,58,237,.08)}
+html[data-sz-theme=light] .sz-nav a.on,html[data-sz-theme=light] .sz-nav a[aria-current]{color:#1b1530;border-color:rgba(91,33,182,.3);background:rgba(124,58,237,.1)}
